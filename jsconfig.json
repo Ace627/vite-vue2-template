@@ -1,0 +1,11 @@
+{
+  "target": "ES5",
+  "module": "ESNext",
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
