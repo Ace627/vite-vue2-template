@@ -72,8 +72,8 @@ export function upperStringFirst(str) {
 
 /**
  * 深拷贝，支持日期、正则、函数
- * @param {[key:string]: any} source 拷贝数据源
- * @returns {[key:string]: any} 拷贝后的数据源
+ * @param {any} source 拷贝数据源
+ * @returns {any} 拷贝后的数据源
  */
 export function deepClone(source) {
   if (!source || typeof source !== 'object') return source
