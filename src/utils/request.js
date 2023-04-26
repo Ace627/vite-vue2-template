@@ -1,6 +1,8 @@
 import axios from 'axios'
 import NProgress from 'nprogress'
 
+NProgress.configure({ showSpinner: false })
+
 // 通用请求配置
 const request = axios.create({
   // baseURL: import.meta.env.VITE_SERVER_URL,
