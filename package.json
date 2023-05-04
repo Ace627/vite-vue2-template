@@ -23,7 +23,8 @@
     "autoprefixer": "^10.4.14",
     "sass": "^1.59.3",
     "terser": "^5.16.8",
-    "vite": "^4.3.2"
+    "vite": "^4.3.2",
+    "vite-plugin-compression2": "^0.9.1"
   },
   "engines": {
     "node": "16.x || 18.x"
