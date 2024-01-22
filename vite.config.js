@@ -1,9 +1,7 @@
 import { resolve } from 'path' // path 模块提供了一些工具函数，用于处理文件与目录的路径
 import { defineConfig, loadEnv } from 'vite' // 使用 defineConfig 工具函数，这样不用 jsdoc 注解也可以获取类型提示
-import vue from '@vitejs/plugin-vue2' // 提供对 Vue 2 的单文件组件支持
-import autoprefixer from 'autoprefixer' // 自动补全 CSS 浏览器前缀，以兼容旧浏览器
-import { compression } from 'vite-plugin-compression2' // 提供打包为 gzip 的压缩文件支持
 import { warpperEnv } from './build' // 引入对环境变量的处理函数
+import { generateVitePlugins } from './build/plugins'
 
 /** 当前执行 node 命令时文件夹的地址（工作目录） */
 const root = process.cwd()
@@ -20,14 +18,7 @@ export default defineConfig(({ command, mode }) => {
     /** 部署应用包时的基本 URL */
     base: VITE_ENV.VITE_PUBLIC_PATH,
 
-    plugins: [
-      vue(),
-      compression({
-        algorithm: 'gzip', // 压缩算法 gzip | brotliCompress | deflate | deflateRaw
-        threshold: 1024 * 10, // 如果体积大于阈值，则进行压缩，单位为 b，1kb = 1024b
-        deleteOriginalAssets: false, // 压缩后是否删除源文件
-      }),
-    ],
+    plugins: generateVitePlugins(VITE_ENV, isBuild),
 
     resolve: {
       alias: [
