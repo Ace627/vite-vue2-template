@@ -1,2 +1,8 @@
-@import './reset';
-@import 'nprogress/nprogress.css';
+@use './variables.css';
+@use './reset.scss';
+@use 'nprogress/nprogress.css';
+@use './common.scss';
+
+body {
+  background-color: #f4f7f9;
+}
