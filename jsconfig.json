@@ -1,8 +1,8 @@
 {
-  "target": "ES5",
   "module": "ESNext",
   "moduleResolution": "node",
   "compilerOptions": {
+    "target": "ES5",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
